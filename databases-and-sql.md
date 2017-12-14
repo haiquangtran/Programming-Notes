@@ -18,6 +18,7 @@
   - Used for select
   - Enables other sessions to select operations but prevents updates
   - read-only operations
+  - this lock type, when imposed, will reserve a page or row to be available only for reading, which means that any other transaction will be prevented to modify the locked record as long as the lock is active. However, a shared lock can be imposed by several transactions at the same time over the same page or row and in that way several transactions can share the ability for data reading since the reading process itself will not affect anyhow the actual page or row data. In addition, a shared lock will allow write operations, but no DDL changes will be allowed.
 - Exclusive lock:
   - Used for DML operations
   - Prevents others from accessing the resource
