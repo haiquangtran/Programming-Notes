@@ -1,6 +1,7 @@
 # SQL and Databases
 
 ## Deadlocks
+- https://www.sqlshack.com/locking-sql-server/
 - Cycle locks
   - Occurs when process A locks table B and process B locks table A, they both hold the locks for those tables, and now process A wants to access table A, and process B wants to access process B but they can't because they are both locked. Stalemate scenario. 
   - 1 process has to be terminated
@@ -29,7 +30,7 @@
   - Used by server when filtering records to be modified.
   - Prevents other update locks
   - A solution to the cycle deadlock problem
-- Conversion/Intent lock:
+- Intent lock:
   - Used for establishing a lock hierarchy
   - Types of intent locks are:
 	- Intent shared (IS)
