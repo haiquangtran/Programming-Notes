@@ -12,7 +12,7 @@
   - **Robust** - users must be able to access the content as technologies advance (including assistive technologies)
 - **Guidelines** - 
   - See the reference for success criteria: https://www.w3.org/WAI/WCAG21/quickref/
-  - 
+ 
 
 
 
