@@ -28,5 +28,16 @@
   - Syntactical differences, Sass uses $ for variables, Less uses @.
 
 
+## Telerik UI
+- Telerik UI for ASP.NET MVC is a set of server-side wrappers that allows using Kendo UI widgets from C# or VB.NET Code. Telerik UI is for .NET, AJAX, MVC, Core, Xamarin, WPF etc.
+- UI Framework: UI Controls for navigation, layout, data management and visualisation and more.
+- Mobile support, leverages touch and adaptive mobile rendering, responsive capabilities and integration with Bootstrap. Supports v4 Bootstrap.
+- Wrappers vs Widgets: from a client-side perspective, the vanilla HTML/JS Kendo UI widgets and their ASP.NET MVC wrappers (UI helpers) reprsent the same thing and provide the same capabilities.
+- You can use Telerik UI for ASP.NET MVC helpers and vanilla Kendo UI widgets at the same time on the same page, if a specific scenario requires that.
+
+## Kendo UI
+- UI Component library for JS based web apps using jQuery, Angular, React, or Vue frameworks.
+- For ASP project you can still use Kendo UI as it has a js wrapper for ASP but if you want to do customizations it would be easier to use Telerik UI
+- https://docs.telerik.com/aspnet-mvc/getting-started/kendo-ui-vs-mvc-wrappers
 
 
