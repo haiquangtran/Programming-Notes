@@ -40,4 +40,35 @@
 - For ASP project you can still use Kendo UI as it has a js wrapper for ASP but if you want to do customizations it would be easier to use Telerik UI
 - https://docs.telerik.com/aspnet-mvc/getting-started/kendo-ui-vs-mvc-wrappers
 
+## TypeScript
+- TypeScript vs JS
+  - TypeScript is a superset of JS which provides optional static typing, classes and interfaces. 
+  - Big benefits is intellisense enables you to find common errors as you type.
+  - 
+
+## ES6
+- ES vs JS
+  - ECMAScript is a standard. It is a trademark scripting language specification
+  - JS is based on the ECMAScript standard
+  - JS is the most popular implementation of the ES standard.
+- **Arrow functions**
+  - "this" is Lexically bound 
+    - Does not have it's own "this", therefore it lexically goes up a scope and uses the "this" value in the scope in which it is defined.
+    - In ES5 you would have to use .bind(this), ES6 you do not.
+  - Object literal - you need to wrap in parentheses to distinguish it between a block and an object (both which use curly brackets).
+    - var test = ({ "test": 123 })
+  - https://medium.freecodecamp.org/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26
+
+## Redux Thunk
+- Middleware is a centralized approach, it enables you to keep your components simpler and generalized, controlling data flow in one place. 
+- Middleware for Redux
+  - A middleware that looks at every action that passes through the system, and if it's a function, calls that function.
+- Thunks are functions that are executed at some stage later on, basically delayed functions or a special function that is returned by another function.
+  - By default, redux only recognizes actions that are objects containing a type attribute i.e. { type: "test" }.
+  - Redux does not recognize actions that returns functions - it only recognizes actions that are objects which must have the attribute type.
+  - Redux Thunk allows you to create actions that return functions.
+  - When an action creator returns a function, that function will get executed by Redux Thunk middleware
+  - Typically any impure functions (with side-effects) are executed by the middleware, to keep the reducer pure as the reducer is meant to be pure (they don't change anything). e.g. API calls (impure) should use redux-thunk
+
+
 
