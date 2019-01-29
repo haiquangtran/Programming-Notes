@@ -7,7 +7,7 @@
 
 ## Azure vs AWS
 - **Azure**
-  - PaaS (Platform as a service)
+  - PaaS (Platform as a service), IaaS
     - You do not have to maintain VMs yourself (security, service packs etc), just have to maintain your application code.
   - Built-in load balancing abilities
   - .NET written applications moved to the cloud fairly easily.
@@ -39,4 +39,17 @@
   - https://www.infoq.com/news/2008/11/Comparing-EC2-App-Engine-Azure
 
 ## Creating a pipeline
-- 
+- **Azure pipelines**
+  - 
+
+## Cosmos DB
+- Azure Cosmos DB is Microsoft's properiety globally-distributed, multi-model database service
+- NoSQL database
+- Manages data at planet-scale
+- Schema-agnostic
+- Horizontally scales
+- **Data model**
+  - Stores "items" in "containers"
+  - Containers are grouped in "databases", which are same as namespaces.
+  - Containers are schema-agnostic, there is no schema when adding items.
+  - Every field in each item is automatically indexed.
