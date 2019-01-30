@@ -66,3 +66,28 @@
 - Docker containers can be hosted in cloud services such as:
   - **Azure Container Service**
     - Can manage, orchestrate, and scale container-based applications in the cloud.
+
+## Azure Functions
+- event driven
+- compute-on-demand and scale-based 
+- Enables creation of HTTP-based API endpoints accessible by a wide range of applications, mobile, IoT devices etc.
+- can implement code that is triggered by events occuring in Azure or third party service as well as on-premises systems.
+- Allows developers to take action by connecting to data sources or messaging solutions thus making it easy to process and react to events.
+- Basically like a Web API endpoint but it costs money everytime you use it.
+### Summary
+- **Azure functions is code is being triggered by an event**
+- Can be developed and debugged on local workstation, which is a big plus to increase developer productivity
+- When dealing with synchronous request/response calls, that execute more complex logic, Azure function is the preferred option
+## Supports
+- Continous deployment and integration
+- Intuitive browser-based user interface allowing you to create scheduled or triggered pioeces of code implemented in a variety of programming languages.
+- Data processed by Azure Functions can persist into Azure data services such as Azure storage, Azure SQL DB, and Document DB.
+- https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
+
+## Azure Logic Apps
+-  Simplifies how you build automated scalable workflows that integrate apps and data across cloud services and on-premises systems.
+- Create, design, and deploy logic apps that automate business processes
+### Summary
+- **Logic apps is a work flow triggered by an event**
+- Logic apps run only in the cloud, as it has dependency on Microsoft managed connectors. It cannnot be debug, test or run Logic apps locally
+- Logic apps better suited for asynchronous integration and fire-and-forget messaging that requires reliable processing.
