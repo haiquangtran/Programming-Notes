@@ -92,8 +92,14 @@
 - Logic apps run only in the cloud, as it has dependency on Microsoft managed connectors. It cannnot be debug, test or run Logic apps locally
 - Logic apps better suited for asynchronous integration and fire-and-forget messaging that requires reliable processing.
 
-## Azure Active Directory
-- Can use for storing user identities and doing authentication and authroization.
+## Azure Active Directory (AD)
+- Can use for storing user identities and doing authentication and authorization.
+- Azure AD is a modern identity provider that supports multiple authentication protocols to secure applications and services in the cloud.
+  - Users, applications, and other entities registered in Azure AD aren't all lumped into a single global service.
+  - Insetad, Azure AD is partitioned into separate tenants.
+  - A tenant is a dedicated, isolated instance of the Azure AD servicve, owned and managed by an organization.
+  - When you sign up for a Microsoft cloud service subscription such as Microsoft Azure or Office 365, a dedicated instance of Azure AD is automatically created for your organization.
+- Azure AD is not the same as Windows Active Directory. Windows Active Directory is focused on securing Windows desktops and servers. In contrast, Azure AD is all about web-based authentication standards such as OpenID and OAuth.
 - Can take avantage of Azure Key Vault to store your application secrets. 
 - Managed Service Identity for Azure couples your app to Azure Active Directory and injects crednetials into your application wihtout having to store them in your config files or anywhere else.
 - https://azure.microsoft.com/en-au/blog/get-the-azure-quick-start-guide-for-net-developers/
