@@ -54,15 +54,57 @@
   - By creating a web app in the Azure portal, you are creating a set of hosting resources in App Service, which you can use to host any web-based application that is supported by Azure. 
 - Good choice for **Stateless microservices**
 - **Definitions**
-  - Resource group: 
-  - Application Insights: monitoring and metric tools for performance of your apps.
+  - Resource group
+    - A resource group is a method of grouping interdependent resources and services (i.e. VMs), web apps, DBs, and more for a given application and environment.
+    - Think of it as a **folder**, a place to group elements of your app.
+    - Allows you to easily manage and delete resources.
+    - Enables you to monitor, control, access, provision, and manage billing for collections of resources. 
+  - App Service plan
+    - Set of physical resources and capacity available to deploy your App service apps into. 
+    - **Web apps, mobile apps, azure functions, and API apps hosted in Azure App Service, all run in an App Service plan**
+      - You can deploy unlimited number of applications into an App Service plan, the number you use greatly depends on the types of applications deployed.
+      - Can use App Service plan to visualise CPU and memory utilization to help determine whether you need to scale or move applications into another App service plan.
+    - Region (North Europe, West US etc)
+    - Scale count (1, 2, 3 instances etc)
+    - Instance size (small, med, large)
+    - Pricing tier or SKU (free, shared, basic, standard, prem, premv2, and isolated)
+      - Size of the VM that is going to host the application
+    - Location
+      - This field specifies the region where the App Service plan resides. i.e. where it will setup the VMs
+  - Application Insights 
+    - Monitoring and metric tools for performance of your apps.
+    - Helps detect and diagnose quality issues in your web apps and web services, and helps you understand what your users actually do with it. 
+    - Also enables you to view insight reports about traffic
 - **Deployment slots**
   -  Add deployment slots to App Serivce web app. e.g. Staging deployment slot, production slot
   - You can easily swap the deployment slots so you can switch from staging to production etc.
-- Reference
+- **Continuous integration/deployment support**
+  - Azure portal provides out-of-the-box CI and deployment with the following:
+    - Azure DevOps
+    - GitHub
+    - Bitbucket
+    - Dropbox
+    - OneDrive
+    - or a local git repository on your dev machine.
+  - Connect your web app to above, and App service will auto-sync code and any future changes on the code into the web app.
+  - With Azure DevOps, you can define your own build and release process that compiles your source code, runs the tests, builds a release, and deploys the release into your web app everytime you commit.
+- **Integrated Visual Studio publishing and FTP publishing**
+  - Publish your web app to Azure via Web Deploy in Visual Studio or FTP.
+  - FTP lacks some capability (better off not using it) 
+- **Built-in auto scale support**
+  - Can scale up/scale down the web app by increasing/decreasing the resources of the underlying machine that is hosting your web app.
+  - Resources can be number of cores or the amount of RAM available.
+  - Scaling out, on the other hand, is ability to increase number of machine instances that are running the web app.
+- References
   - https://docs.microsoft.com/en-gb/learn/modules/host-a-web-app-with-azure-app-service/2-create-a-web-app-in-the-azure-portal
+  - https://docs.microsoft.com/en-gb/learn/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp
+  - https://docs.microsoft.com/en-gb/learn/modules/host-a-web-app-with-azure-app-service/6-exercise-deploy-your-code-to-app-service?pivots=csharp
 
 
+## TODO:
+1. Load balancers/Networking
+2. CI/CD in azure
+3. API apps 
 
 ## Creating a pipeline
 - **Azure pipelines**
