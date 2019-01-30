@@ -38,6 +38,32 @@
   - Amazon's platform basic advantage is simple: You can just use the amount of storage you want, when you want it.
   - https://www.infoq.com/news/2008/11/Comparing-EC2-App-Engine-Azure
 
+## Azure
+- Enables you to quickly and efficiently build, deploy, monitor and scale cloud hosted solutions. 
+- Deployment model is flexible:
+  - Can use multiple IDE's to deploy etc.
+- 
+
+## Azure App Service
+- PaaS - You focus on the build while Azure takes care of the ifnrastructure to run and scale your apps.
+- Azure App Service is a fully managed cloud computing platform within the Azure environment that is optimized for hosting web apps, REST APIs, and mobile backends. 
+  - Cloud hosting service for your app
+- Hosting your web application using Azure App Service makes deploying and managing a web app easier compared to managing a physical server
+- **How to host your application on Azure App Service**
+  - You can create a web app using the Azure portal, the Azure CLI, a script, or an IDE.
+  - By creating a web app in the Azure portal, you are creating a set of hosting resources in App Service, which you can use to host any web-based application that is supported by Azure. 
+- Good choice for **Stateless microservices**
+- **Definitions**
+  - Resource group: 
+  - Application Insights: monitoring and metric tools for performance of your apps.
+- **Deployment slots**
+  -  Add deployment slots to App Serivce web app. e.g. Staging deployment slot, production slot
+  - You can easily swap the deployment slots so you can switch from staging to production etc.
+- Reference
+  - https://docs.microsoft.com/en-gb/learn/modules/host-a-web-app-with-azure-app-service/2-create-a-web-app-in-the-azure-portal
+
+
+
 ## Creating a pipeline
 - **Azure pipelines**
   - 
@@ -57,9 +83,6 @@
 ## Azure Service Fabric
 - Build and operate always-on, scalable, distributed apps
 - **Designed for large and complex microservice systems.**
-
-## Azure App Service
-- Good choice for **Stateless microservices**
 
 ## Containers
 - Docker containers can be hosted in your own Linux or Windows infrastructure

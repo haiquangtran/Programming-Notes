@@ -80,4 +80,9 @@
   - A way to keep DLLs globally accessible without worrying about conflicts (No more DLL hell)
   - Each architecture and version gets it's own place to live. 
   - Also gets its own way to browse it in Explorer, i.e. can go to C:\Windows\assembly which lists all the DLLs.
-
+- **Windows Communication Foundation (WCF) Services**
+  - Runtime and set of APIs in the .NET Framework for building connected, service-oriented applications.
+  - Often used to deploy Service-oriented architecture (SOA) to support distributed computing where services have remote consumers. 
+  - A service endpoint can be part of a continuously available service hosted by IIS, or it can be a service hosted in an application.
+  - Services are loosely coupled to each other.
+  - Services typically have a WSDL interface that any WCF client can use to consume the service, regardless of the platform.
