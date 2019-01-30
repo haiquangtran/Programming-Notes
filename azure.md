@@ -101,8 +101,11 @@
   - https://docs.microsoft.com/en-gb/learn/modules/host-a-web-app-with-azure-app-service/6-exercise-deploy-your-code-to-app-service?pivots=csharp
 
 ## Azure Load Balancer
-- Load Balancer distributes nwe inbound flows that arrive on the Load Balancer's frontend to the backend pool instances, according to rules and health probes.
+- Load Balancer distributes new inbound flows that arrive on the Load Balancer's frontend to the backend pool instances, according to rules and health probes.
+- Create load-balancing rules to distribute traffice that arrives at frontend to bakend pool instances. 
 - A public Load Balancer can also provide outbound connections for VM's inside your virtual network by translating their private IP addresses to public IP addresses.
+- Can be public Load Balancer or Internal Load Balancer
+- Load Balancer  resource's functions expressed as a front end, a rule, a health probe, and a backend pool definition. You place VMs into the backend pool by specifying the backend pool from the VM.
 - Benefits
   - Scale applications and create high availability for your services.
   - Supports inbound and outbound scenarios
@@ -110,11 +113,29 @@
   - Scales up to millions of flows for all TCP and UDP applications.
 - **Why use Load Balancer?**
   - Load-balance incoming internet traffic to your VMs. Configuration is known as public load balancer.
-  - Load-balance traffic across VMs inside a virtual network. 
+  - Load-balance traffic across VMs inside a virtual network. Can also reach a Load Balancer FE from an on-premises network. Configuration is known as a internal load balancer.
+  - Port forward traffic to a specific port on a VM.
+  - Provide outbound connectivity for VMs inside your virtual network by using a public load balancer.
 - Available in two tiers: Basic and Standard.
   - Differences in scale, features, and pricing.
+  - Basic Azure Load Balancer is free of charge.
+  - Load Balancer is not available with Basic Virtual Machines. 
+  - Standard Balancer has prices associated to the number of rules (no charge if no rules are configured) and on the amount of data processed inbound and outbound irrespective of rule. 
+    - https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview
+- **Concepts**
+  - Public Load Balancer
+    - Maps public IP address and port number of incoming traffic to the private IP address and port number of the VM, and vice versa for the response traffic from the VM.
+    - Applying load-balancing rules enables distribution of specific types of traffic across multiple VMs or services. e.g. spreading load of web request traffic across multiple web servers
+    - By default, Azure distributes network traffic equally among multiple VM instances. 
+  - Internal Load Balancer
+    - Directs traffic only to resources inside a virtual network or that use a VPN to access Azure infrastructure. 
+    - Azure infrastructure restricts access to the load-balanced front-end IP addresses of a virtual network. 
+    - FE IP addresses and virtual networks are never directly exposed to an internet endpoint.
+    - The loadbalancer is only in the virtual network and not exposed to the public
 - Reference
   - https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
+  - https://azure.microsoft.com/en-us/pricing/details/load-balancer/
+  - https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview
 
 ## Azure Virtual Network
 - Enables Azure resources such as VM's to securely communicate with each other, the internet, and on-premises networks.
