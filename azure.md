@@ -91,3 +91,9 @@
 - **Logic apps is a work flow triggered by an event**
 - Logic apps run only in the cloud, as it has dependency on Microsoft managed connectors. It cannnot be debug, test or run Logic apps locally
 - Logic apps better suited for asynchronous integration and fire-and-forget messaging that requires reliable processing.
+
+## Azure Active Directory
+- Can use for storing user identities and doing authentication and authroization.
+- Can take avantage of Azure Key Vault to store your application secrets. 
+- Managed Service Identity for Azure couples your app to Azure Active Directory and injects crednetials into your application wihtout having to store them in your config files or anywhere else.
+- https://azure.microsoft.com/en-au/blog/get-the-azure-quick-start-guide-for-net-developers/
