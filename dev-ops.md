@@ -27,3 +27,6 @@
     - The hypervisor allows multiple VMs to run on a single machine.
     - Each VM includes a full copy of an operating system, the application, necessary binaries and libraries - taking up tens of GBs.
     - VMs can be slow to boot.
+- References
+  - https://www.docker.com/resources/what-container
+  - https://www.linode.com/docs/applications/containers/when-and-why-to-use-docker/
