@@ -100,9 +100,33 @@
   - https://docs.microsoft.com/en-gb/learn/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp
   - https://docs.microsoft.com/en-gb/learn/modules/host-a-web-app-with-azure-app-service/6-exercise-deploy-your-code-to-app-service?pivots=csharp
 
+## Azure Load Balancer
+- Load Balancer distributes nwe inbound flows that arrive on the Load Balancer's frontend to the backend pool instances, according to rules and health probes.
+- A public Load Balancer can also provide outbound connections for VM's inside your virtual network by translating their private IP addresses to public IP addresses.
+- Benefits
+  - Scale applications and create high availability for your services.
+  - Supports inbound and outbound scenarios
+  - Provides low latency and high throughput
+  - Scales up to millions of flows for all TCP and UDP applications.
+- **Why use Load Balancer?**
+  - Load-balance incoming internet traffic to your VMs. Configuration is known as public load balancer.
+  - Load-balance traffic across VMs inside a virtual network. 
+- Available in two tiers: Basic and Standard.
+  - Differences in scale, features, and pricing.
+- Reference
+  - https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
+
+## Azure Virtual Network
+- Enables Azure resources such as VM's to securely communicate with each other, the internet, and on-premises networks.
+- Scoped to a single region; however multiple virtual networks from different regions can be connected using Virtual Network Peernig
+- Provides isolation and segmentation
+  - Each virtual network is isolated from other virtual networks
+  - Specify custom private IP address space using public and private addresses. Azure assigns resources in a virtual network a private IP address from the address space that you assign.
+  - Segment the virtual network into one or more subnets and allocate a portion of the virtual network's space to each subnet. 
+- Reference
+  - https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
 
 ## TODO:
-1. Load balancers/Networking
 2. CI/CD in azure
 3. API apps 
 
