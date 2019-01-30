@@ -112,6 +112,8 @@
   - Provides low latency and high throughput
   - Scales up to millions of flows for all TCP and UDP applications.
 - **Why use Load Balancer?**
+  - No downtime, as if one server (VM) fails, then you can reroute the traffic to the other servers (VMs)
+  - Helps with finite resources, as TCP has limited connections, so by load balancing I can balance the traffic on different servers (VMs) and have higher availability. Can scale up and down etc. 
   - Load-balance incoming internet traffic to your VMs. Configuration is known as public load balancer.
   - Load-balance traffic across VMs inside a virtual network. Can also reach a Load Balancer FE from an on-premises network. Configuration is known as a internal load balancer.
   - Port forward traffic to a specific port on a VM.
