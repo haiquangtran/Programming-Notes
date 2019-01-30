@@ -1,0 +1,29 @@
+# Dev Ops
+
+## Containers
+- A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+- **Docker container**
+  - A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application. 
+    - code
+    - runtime
+    - system tools
+    - system libraries 
+    - settings
+  - Container images become containers at runtime
+  - Images become containers when they run oin the Docker Engine
+  - Containers isolate software from its environment
+  - Containerized software will always run the same, regardless of the infrastructure.
+- **Containers vs Virtual Machines (VMs)**
+  - Similar resource isolation and allocation benefits, but function differently
+  - Containers virtualize the operating system instead of hardware
+  - **Containers**
+    - Containers are more portable and efficient.
+    - Containers are an abstraction at the app layer that packages code and dependencies together
+    - Multiple containres can run ont he same machine adn share the OS kernel, each running isolated processes in user space.
+    - Containers take up less space than VMs (container images are typically tens of MBs in size)
+    - Can handle more applications and require fewer VMs and Operating systems.
+  - **Virtual Machines**
+    - VMs are an abstraction of a physical hardware turning one server into many servers. 
+    - The hypervisor allows multiple VMs to run on a single machine.
+    - Each VM includes a full copy of an operating system, the application, necessary binaries and libraries - taking up tens of GBs.
+    - VMs can be slow to boot.
