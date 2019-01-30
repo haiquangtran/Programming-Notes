@@ -53,3 +53,16 @@
   - Containers are grouped in "databases", which are same as namespaces.
   - Containers are schema-agnostic, there is no schema when adding items.
   - Every field in each item is automatically indexed.
+
+## Azure Service Fabric
+- Build and operate always-on, scalable, distributed apps
+- **Designed for large and complex microservice systems.**
+
+## Azure App Service
+- Good choice for **Stateless microservices**
+
+## Containers
+- Docker containers can be hosted in your own Linux or Windows infrastructure
+- Docker containers can be hosted in cloud services such as:
+  - **Azure Container Service**
+    - Can manage, orchestrate, and scale container-based applications in the cloud.
