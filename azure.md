@@ -123,6 +123,10 @@
   - Each virtual network is isolated from other virtual networks
   - Specify custom private IP address space using public and private addresses. Azure assigns resources in a virtual network a private IP address from the address space that you assign.
   - Segment the virtual network into one or more subnets and allocate a portion of the virtual network's space to each subnet. 
+- Communicate with on-premises resources with the following:
+  - Point to site virtual private network (VPN)
+  - Site to site VPN
+  - Azure ExpressRoute
 - Reference
   - https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
 
