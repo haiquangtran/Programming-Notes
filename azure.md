@@ -1,8 +1,51 @@
 # Azure 
 
+## Security 
+- **Top 5 security items to consider before publishing to production**
+  1. Activate Azure Security Center
+  2. Validate and verity application inputs and outputs (Mainly User)
+    - **Always validate every input for your application**
+    - Always use whitelist approach: only accept "known good" input
+      - https://docs.microsoft.com/en-gb/aspnet/web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
+      - https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet
+    - **Always use parameterized queries, do not concat query strings together as this enables SQL injection.**
+      - https://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php
+    - **Always encode your ouput to prevent XSS**
+      - Any output presented visually or within a document should always be encoded and escaped. (to prevent XSS)
+      - In ASP.NET all output is already encoded.
+    - Sanitize and validate inputs
+    - https://docs.microsoft.com/en-gb/learn/modules/top-5-security-items-to-consider/3-inputs-and-outputs
+  3. Store secrets in Azure Key Vault
+    - Storing confidential items like connection strings, security tokens, certificates, and passwords in code is a security risk. 
+    - Even storing this data in web config is a bad idea - you allow anyone who has access to source code or web server access to your privdate data. 
+  4. Ensure you are using the latest version of your framework and using its security features
+    - Awlays use built-in security features, and keep them up to date.
+    - Azure Security Center will warn you if your frameworks are out of date as part of recommendations tab.
+  5. Verify your program dependencies and libraries are safe to use
+    - https://docs.microsoft.com/en-gb/learn/modules/top-5-security-items-to-consider/6-safe-dependencies
+- Azure Security Center
+  - Azure Security Center (ASC) is a monitoring service providing thread protection on all your services both in Azure and on-premises.
+    - Provides security recommendations
+    - Monitors security settings across on-premises and cloud workloads
+    - Monitor all services and perform automatic security assessments to potential vulnerabilities
+    - Uses Machine learning to block malware from being installed
+    - Identify potential inbound attacks 
+    - Just-in-time access control for ports, reducing your attack surface by ensuring the network only allows traffic you require.
+  - **Activate Azure Security Center**
+    - In Azure portal > Security center or Azure security center > Policy and Compliance > Coverage
+    - It has free tier and standard tier. 
+- **Azure Key Vault**
+  - A secret store: centralized cloud service for storing application secrets
+  - Keeps confidential data safe by keeping application secrets in a single central location and providing secure access, permissions control, and access logging.
+  - Secrets stored in individual vaults, each with own config and security policy. 
+  - Can get data through REST API or through a client SDK.
+  - Designed to store configuration secrets for server applications NOT for storing data belonging to app's users. 
+- Reference
+  - https://docs.microsoft.com/en-gb/learn/modules/top-5-security-items-to-consider/1-introduction
+
 ## Azure Kubernetes Services (AKS)
 - **Kubernetes**
-  - A standward way to manage application containers in production environment.
+  - A standard way to manage application containers in production environment.
 - Azure Kubernetes Services brings Azure and Kubernetes together, allowing users to quickly create fully managed Kubernetes clusters.
 
 ## Azure vs AWS
@@ -42,11 +85,11 @@
 - Enables you to quickly and efficiently build, deploy, monitor and scale cloud hosted solutions. 
 - Deployment model is flexible:
   - Can use multiple IDE's to deploy etc.
-- 
 
 ## Azure App Service
 - PaaS - You focus on the build while Azure takes care of the ifnrastructure to run and scale your apps.
-- Azure App Service is a fully managed cloud computing platform within the Azure environment that is optimized for hosting web apps, REST APIs, and mobile backends. 
+- Azure App Service is a fully managed cloud computing platform within the Azure environment that is optimized for hosting web apps, REST APIs, and mobile backends.
+  - Supports code written in .NET, .NET Core, Java, Ruby, Node.js, PHP, and Python.
   - Cloud hosting service for your app
 - Hosting your web application using Azure App Service makes deploying and managing a web app easier compared to managing a physical server
 - **How to host your application on Azure App Service**
@@ -61,6 +104,7 @@
     - Enables you to monitor, control, access, provision, and manage billing for collections of resources. 
   - App Service plan
     - Set of physical resources and capacity available to deploy your App service apps into. 
+    - Can continue to add apps to an existing plan but they will share the same resource. Overloading an App Service plan can cause reduced performance or downtime for your new and existing apps.
     - **Web apps, mobile apps, azure functions, and API apps hosted in Azure App Service, all run in an App Service plan**
       - You can deploy unlimited number of applications into an App Service plan, the number you use greatly depends on the types of applications deployed.
       - Can use App Service plan to visualise CPU and memory utilization to help determine whether you need to scale or move applications into another App service plan.
