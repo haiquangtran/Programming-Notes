@@ -187,9 +187,14 @@
   - https://azure.microsoft.com/en-us/pricing/details/load-balancer/
   - https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview
 
+## Integrate on-premises Active Directory domains with Azure Active Directory
+- https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/identity/azure-ad
+## Create VPN gateway connection from on-premises network to the VNet 
+- https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+
 ## Azure Virtual Network
 - Enables Azure resources such as VM's to securely communicate with each other, the internet, and on-premises networks.
-- Scoped to a single region; however multiple virtual networks from different regions can be connected using Virtual Network Peernig
+- Scoped to a single region; however multiple virtual networks from different regions can be connected using Virtual Network Peering
 - Provides isolation and segmentation
   - Each virtual network is isolated from other virtual networks
   - Specify custom private IP address space using public and private addresses. Azure assigns resources in a virtual network a private IP address from the address space that you assign.
@@ -202,24 +207,58 @@
   - https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
 
 ## TODO:
-2. CI/CD in azure
 3. API apps 
 
-## Creating a pipeline
+
+
+## Continuous Integration/Continuous Delivery (CI/CD)
+- https://docs.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
 - **Azure pipelines**
   - 
 
-## Cosmos DB
+## Azure Cosmos DB
 - Azure Cosmos DB is Microsoft's properiety globally-distributed, multi-model database service
+- Database as a Service
 - NoSQL database
+  - It is not a relational database and is not good with relational data
+  - Not good at JOINS
+- Multi-model as in it supports:
+  - key-value
+  - Document
+  - graph
+  - Column-family
+- By default, you can interact with Cosmos DB using SQL API. All available API's available are:
+  - SQL (document)
+  - MongoDB (document)
+  - Cassandra
+  - Azure Table
+  - Gemlin (graph)
+  - Note: these are just API's that allow you to interact with Cosmos DB.
+- This also makes migrating existing MongoDB apps to Cosmos DB easily etc.
 - Manages data at planet-scale
 - Schema-agnostic
+- Azure Cosmos DB provides client-side SDKs for: 
+  - .NET, 
+  - .NET Core, 
+  - Java, 
+  - Node.js
+  - Python
 - Horizontally scales
 - **Data model**
   - Stores "items" in "containers"
   - Containers are grouped in "databases", which are same as namespaces.
   - Containers are schema-agnostic, there is no schema when adding items.
   - Every field in each item is automatically indexed.
+- **Use case**
+  - If your data changes a lot
+  - If your data is being ingested at high speed
+  - If there lots of data (peta-bytes etc).
+  - As long as you do not need JOINS.
+- There is a extension for Visual Studio Code you do not have to go to Azure portal to create a DB.
+- References
+  - https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction
+  - https://docs.microsoft.com/en-us/azure/cosmos-db/introduction
+  - https://docs.microsoft.com/en-gb/learn/modules/create-cosmos-db-for-scale/2-create-an-account
 
 ## Azure Service Fabric
 - Build and operate always-on, scalable, distributed apps
@@ -260,10 +299,10 @@
 - Can use for storing user identities and doing authentication and authorization.
 - Azure AD is a modern identity provider that supports multiple authentication protocols to secure applications and services in the cloud.
   - Users, applications, and other entities registered in Azure AD aren't all lumped into a single global service.
-  - Insetad, Azure AD is partitioned into separate tenants.
+  - Instead, Azure AD is partitioned into separate tenants.
   - A tenant is a dedicated, isolated instance of the Azure AD servicve, owned and managed by an organization.
   - When you sign up for a Microsoft cloud service subscription such as Microsoft Azure or Office 365, a dedicated instance of Azure AD is automatically created for your organization.
 - Azure AD is not the same as Windows Active Directory. Windows Active Directory is focused on securing Windows desktops and servers. In contrast, Azure AD is all about web-based authentication standards such as OpenID and OAuth.
 - Can take avantage of Azure Key Vault to store your application secrets. 
-- Managed Service Identity for Azure couples your app to Azure Active Directory and injects crednetials into your application wihtout having to store them in your config files or anywhere else.
+- Managed Service Identity for Azure couples your app to Azure Active Directory and injects credentials into your application without having to store them in your config files or anywhere else.
 - https://azure.microsoft.com/en-au/blog/get-the-azure-quick-start-guide-for-net-developers/

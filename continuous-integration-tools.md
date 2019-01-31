@@ -24,3 +24,7 @@
 - Costs money - (depending on the number of build agents)
 - Integration with Bitbucket, JIRA, hipchat etc. 
 - https://stackify.com/jenkins-teamcity-bamboo/
+
+## Azure Pipelines
+- Creating your first pipeline
+  - You need to have AzureDevOps organisation
