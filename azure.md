@@ -1,6 +1,9 @@
 # Azure 
 
 ## Security 
+- Read this or do the module: 
+  - https://docs.microsoft.com/en-gb/learn/modules/design-for-security-in-azure/2-defense-in-depth
+  - https://docs.microsoft.com/en-gb/learn/modules/design-for-security-in-azure/8-summary
 - **Top 5 security items to consider before publishing to production**
   1. Activate Azure Security Center
   2. Validate and verity application inputs and outputs (Mainly User)
@@ -42,6 +45,7 @@
   - Designed to store configuration secrets for server applications NOT for storing data belonging to app's users. 
 - Reference
   - https://docs.microsoft.com/en-gb/learn/modules/top-5-security-items-to-consider/1-introduction
+  - https://docs.microsoft.com/en-gb/learn/modules/design-for-security-in-azure/2-defense-in-depth
 
 ## Azure Kubernetes Services (AKS)
 - **Kubernetes**
