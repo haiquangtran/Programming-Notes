@@ -324,6 +324,14 @@
     - Stateless logic: function instances are created and destroyed on demand. If state is required, it can be stored in associated storage service.
     - Event driven: they run only in response to an event.
     - Functions can be used in traditional compute environments.
+- **Triggers**
+  - Azure Functions supports triggers which are used to determine how an Azure function is executed.
+- **Bindings**
+  - A binding is a connection to data within your function.
+  - They are optional and come in form of input and output bindings.
+  - An input binding is the data your function receives.
+  - An output binding is the data your function sends
+  - Unlike a trigger, a function can have multiple input and output bindings
 - Support for Azure Function Triggers:
   - https://docs.microsoft.com/en-gb/learn/modules/create-serverless-logic-with-azure-functions/4-creating-and-executing-an-azure-function
 - **Drawbacks of serverless compute solution**
