@@ -332,6 +332,17 @@
   - Exceution frequency
     - If you expect your function to be executed continuously by multiple clients, it would be prudent to estimate the usage and caculate the cost of using functions accordingly. It might be cheaper to host on a VM.
     - While scaling, only 1 function app instance can be created every 10 seconds, for up to 200 total instances. 
+- **Serverless APIs using Azure Functions**
+  - **Azure Functions Proxies**
+    - Allows you to forward requests to other resources.
+    - You define HTTP endpoint just like with HTTP trigger, but instead of writing code to execute when that endpoint is called, you provide a URL to a remote implementation
+    - Allows to compose multiple API sources into a single API surface
+    - Useful for building your API as microservices
+    - A proxy can point to any HTTP resource, such as:
+      - Azure Functions
+      - API apps in Azure App Service
+      - Docker containers in App Service in Linux
+      - Any other hosted API
 - **Summary **
   - **Azure functions is code is being triggered by an event**
   - Can be developed and debugged on local workstation, which is a big plus to increase developer productivity
@@ -343,6 +354,7 @@
 - References
   - https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
   - https://docs.microsoft.com/en-gb/learn/modules/create-serverless-logic-with-azure-functions/2-decide-if-serverless-computing-is-right-for-your-business-need
+  - https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-serverless-api
 
 ## Azure Logic Apps (Serverless)
 -  Simplifies how you build automated scalable workflows that integrate apps and data across cloud services and on-premises systems.
