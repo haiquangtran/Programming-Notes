@@ -206,11 +206,6 @@
 - Reference
   - https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
 
-## TODO:
-3. API apps 
-
-
-
 ## Continuous Integration/Continuous Delivery (CI/CD)
 - https://docs.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
 - **Azure pipelines**
@@ -255,11 +250,12 @@
   - If there lots of data (peta-bytes etc).
   - As long as you do not need JOINS.
 - There is a extension for Visual Studio Code you do not have to go to Azure portal to create a DB.
+- **Note:** 1000 request units per second (RU/s). 1000 is the minimum RU/s value you can set to enable automatic scaling.
 - References
   - https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction
   - https://docs.microsoft.com/en-us/azure/cosmos-db/introduction
   - https://docs.microsoft.com/en-gb/learn/modules/create-cosmos-db-for-scale/2-create-an-account
-
+  - https://docs.microsoft.com/en-gb/learn/modules/create-cosmos-db-for-scale/3-what-is-a-request-unit
 ## Azure Service Fabric
 - Build and operate always-on, scalable, distributed apps
 - **Designed for large and complex microservice systems.**
@@ -270,24 +266,85 @@
   - **Azure Container Service**
     - Can manage, orchestrate, and scale container-based applications in the cloud.
 
-## Azure Functions
+## Serverless Compute 
+**Serverless logic**
+  - Serverless computing: your cloud provider manages the provisioning and maintenance of the infrastructure letting you focus completely on building the app logic. 
+  - Enables you to run pieces of code or functions, written in the programming language of your choice, in the cloud.
+- **Serverless compute**
+  - Thought of as function as a service (FaaS), or a microservice hosted in the cloud
+  - Business logic runs as functions and you don't have to manually provision or scale infrastructure.
+  - Cloud provider manages infrastructure
+  - App is automatically scaled out or down depending on the load
+  - The two most common approaches are:
+    - Azure Logic Apps
+    - Azure Functions
+
+## Azure Functions (Serverless)
+- Azure functions is a serverless application platform. 
+- Can host business logic that can be executed without provisioning infrastructure.
+- Provides scalability and only charged for the resources used. 
 - event driven
 - compute-on-demand and scale-based 
 - Enables creation of HTTP-based API endpoints accessible by a wide range of applications, mobile, IoT devices etc.
 - can implement code that is triggered by events occuring in Azure or third party service as well as on-premises systems.
 - Allows developers to take action by connecting to data sources or messaging solutions thus making it easy to process and react to events.
 - Basically like a Web API endpoint but it costs money everytime you use it.
-### Summary
-- **Azure functions is code is being triggered by an event**
-- Can be developed and debugged on local workstation, which is a big plus to increase developer productivity
-- When dealing with synchronous request/response calls, that execute more complex logic, Azure function is the preferred option
-## Supports
-- Continous deployment and integration
-- Intuitive browser-based user interface allowing you to create scheduled or triggered pioeces of code implemented in a variety of programming languages.
+- **Defintions**
+  - What is a Function app?
+    - functions are hosted in an execution context called a function app.
+    - You define function apps to logically group and structure your functions and compute resource in Azure. 
+    - **Must be linked to a storage account**
+- **Securing HTTP triggers**
+  - By default, it's set to "Function" which requires a API key
+  - It can also be set to "Admin" to use a global "master" key
+  - Can be anonymous to indicate no key is required.
+  - You can also change the authorization level through the function properties after creation.
+  - Since we specified "Function" when we created this function, we will need to supply the key when we send the HTTP request. 
+    - You can send it as a query string parameter named code, or as an HTTP header (preferred) named x-functions-key.
+  - Functions can integrate with other services, like Event Grid, GitHub, Twilio, Microsoft Graph, and Logic Apps to create complex and robust serverless workflows quickly and easily.
+- Plans
+  - **Consumption plan (Serverless)**
+    - Used when using Azure serverless application platform.
+    - Provides automatic scaling and bills you when your functions are running
+    - Comes with default config timeout period of 5 mins, up to 10 mins.
+  - **Azure App Service plan (Not serverless)**
+    - Avoids timeout periods by having functions run continously on a VM
+    - Responsible for managing the app resources the function runs on
+- **Test your Azure function** 
+  - Manual execution
+    - If HTTP trigger, you can use Postman or cURL to initiate an HTTP request, which is available from the HTTP trigger definition (Get function URL)
+  - Testing in the Azure portal
+    - Test > Run in Azure Portal
+- **Benefits**
+  - Hosts business logic code in the cloud
+  - Automatic scaling
+  - No servers to maintain or manage, also avoids over-allocation of infrastructure
+  - Only changed for what you use - not on reserved time.
+  - **Functions**
+    - Stateless logic: function instances are created and destroyed on demand. If state is required, it can be stored in associated storage service.
+    - Event driven: they run only in response to an event.
+    - Functions can be used in traditional compute environments.
+- Support for Azure Function Triggers:
+  - https://docs.microsoft.com/en-gb/learn/modules/create-serverless-logic-with-azure-functions/4-creating-and-executing-an-azure-function
+- **Drawbacks of serverless compute solution**
+  - Execution time
+    - by default, functions have a timeout of 5 minutes, the max is 10 mins. If requires more, then can host on VM. Durable functions also exist to allow you to orchestrate the executions of multiple functions without any timeout.
+  - Exceution frequency
+    - If you expect your function to be executed continuously by multiple clients, it would be prudent to estimate the usage and caculate the cost of using functions accordingly. It might be cheaper to host on a VM.
+    - While scaling, only 1 function app instance can be created every 10 seconds, for up to 200 total instances. 
+- **Summary **
+  - **Azure functions is code is being triggered by an event**
+  - Can be developed and debugged on local workstation, which is a big plus to increase developer productivity
+  - When dealing with synchronous request/response calls, that execute more complex logic, Azure function is the preferred option
+- **Supports**
+  - Continous deployment and integration
+  - Intuitive browser-based user interface allowing you to create scheduled or triggered pioeces of code implemented in a variety of programming languages.
 - Data processed by Azure Functions can persist into Azure data services such as Azure storage, Azure SQL DB, and Document DB.
-- https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
+- References
+  - https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
+  - https://docs.microsoft.com/en-gb/learn/modules/create-serverless-logic-with-azure-functions/2-decide-if-serverless-computing-is-right-for-your-business-need
 
-## Azure Logic Apps
+## Azure Logic Apps (Serverless)
 -  Simplifies how you build automated scalable workflows that integrate apps and data across cloud services and on-premises systems.
 - Create, design, and deploy logic apps that automate business processes
 ### Summary
