@@ -294,9 +294,14 @@
     - functions are hosted in an execution context called a function app.
     - You define function apps to logically group and structure your functions and compute resource in Azure. 
     - **Must be linked to a storage account**
+    - Request parameter name
+      - This setting is a string that represents the name of the parameter that contains the information about an incoming HTTP request.
+      - By default, the name of the parameter is req.
 - **Securing HTTP triggers**
   - By default, it's set to "Function" which requires a API key
+    - The scope of the function key is that they are specific to a function
   - It can also be set to "Admin" to use a global "master" key
+    - The scope of the Admin/Host key is that they apply to all functions inside the function app.
   - Can be anonymous to indicate no key is required.
   - You can also change the authorization level through the function properties after creation.
   - Since we specified "Function" when we created this function, we will need to supply the key when we send the HTTP request. 
@@ -326,6 +331,19 @@
     - Functions can be used in traditional compute environments.
 - **Triggers**
   - Azure Functions supports triggers which are used to determine how an Azure function is executed.
+  - Every Azure Function must have exactly one trigger associated with it. If you want multiple triggers, you must create multiple functions.
+  - **Timer trigger**
+    - Executes a function at a consistent interval.
+    - To create one you need two pieces of information:
+      1. A Timestamp parameter name, which is a identifier to access the trigger in code
+      2. A Schedule, which is a CRON expression that sets the interval for the timer.
+        - CRON expression: {second} {minute} {hour} {day} {month} {day of the week}
+        - https://docs.microsoft.com/en-gb/learn/modules/execute-azure-function-with-triggers/3-timer-trigger
+  - **Blob trigger**
+    - Executes a function when a file is uploaded or updated in Azure blob storage.
+    - To create a blob trigger, create an Azure Storage account and provide a location that the trigger monitors.
+    - You provide the path of the container that the trigger monitors.
+    - https://docs.microsoft.com/en-gb/learn/modules/execute-azure-function-with-triggers/7-blob-trigger
 - **Bindings**
   - A binding is a connection to data within your function.
   - They are optional and come in form of input and output bindings.
@@ -363,6 +381,34 @@
   - https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
   - https://docs.microsoft.com/en-gb/learn/modules/create-serverless-logic-with-azure-functions/2-decide-if-serverless-computing-is-right-for-your-business-need
   - https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-serverless-api
+
+## Azure Storage
+- Microsoft's cloud storage solution supporting all types of data, including: blobs, queues, and NoSQL.
+- Goal of Azure Storage is to provide data storage that is:
+  - Highly available
+  - Secure
+  - Scalable
+  - Managed
+- **Azure Blob Storage**
+  - Object storage solution designed to store large amounts of unstructured data.
+  - Great at doing things like:
+    - Storing files
+    - Serving files
+    - Streaming video and audio
+    - Logging data
+  - **Types of blobs**
+    - Block blobs
+      - Most common
+      - Stores text or binary data efficiently
+    - Append blobs
+      - Like block blobs
+      - More desigend for append operations like creating a log file that's constantly updated
+    - Page blobs
+      - Made up of pages 
+      - Designed for frequent random read and write operations
+- 
+- Reference
+  - https://docs.microsoft.com/en-gb/learn/modules/execute-azure-function-with-triggers/7-blob-trigger
 
 ## Azure Logic Apps (Serverless)
 -  Simplifies how you build automated scalable workflows that integrate apps and data across cloud services and on-premises systems.
