@@ -38,6 +38,16 @@
     - using Docker containers
     - need high-performance and scalable systems
     - need side-by-side .NET versions per application
+  - .NET Core has the following characteristics:
+    - Cross platform
+    - Cosnsitent across architectures
+      - runs your code with same behaviour on multiple architectures, including x64, x86
+    - Command-line tools
+    - Flexible deployment
+    - Compatible
+      - Comptaible with .NET Framewokr, Xamarin, and Mono, via .NET standard
+    - Open source
+    - https://docs.microsoft.com/en-us/dotnet/core/about
 - **.NET Framework**
   - The .NET framework is used for building desktop applications and ASP.NET applications (web apps) running on IIS. 
   - First managed framework released.

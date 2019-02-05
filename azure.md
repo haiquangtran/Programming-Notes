@@ -209,7 +209,23 @@
 ## Continuous Integration/Continuous Delivery (CI/CD)
 - https://docs.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
 - **Azure pipelines**
-  - 
+  - Need a DevOps account and organisation (formly VSTS)
+  - Integrates with the following:
+    - Azure Repos Git
+    - GitHub
+    - Subversion
+    - Bitbucket Cloud
+    - and External Git.
+    - https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops
+- **Access restrictions**
+  - Be aware of the following restrictions for public projects in Azure Pipelines:
+    - Build secrets
+      - secrets associated with build pipeline are not made available to pull request builds of forks
+    - Cross-project access
+      - All builds in Azure DevOps public project run with an access token restricted to the project.
+    - Azure artifacts packages:
+      - If builds need access to packages from Azure Artifacts, you need to explicitly grant permission.
+    - https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops
 
 ## Azure Cosmos DB
 - Azure Cosmos DB is Microsoft's properiety globally-distributed, multi-model database service
@@ -454,3 +470,24 @@
 - Can take avantage of Azure Key Vault to store your application secrets. 
 - Managed Service Identity for Azure couples your app to Azure Active Directory and injects credentials into your application without having to store them in your config files or anywhere else.
 - https://azure.microsoft.com/en-au/blog/get-the-azure-quick-start-guide-for-net-developers/
+
+## Azure DevOps
+- VSTS (Visual Studio Team Services) were renamed to Azure DevOps
+- Azure DevOps is a suite of services providing end-to-end solutions for organisations looking for an enterprise-grade toolchain.
+- **Services available:**
+  - Azure Boards (agile tools to plan, and track)
+  - Azure Pipelines (build, test, deploy with CI/CD)
+  - Azure Repos (unlimited, cloud-hosted private and public git repos)
+  - Azure Test Plans (ship by providing manual and exploratory testing tools)
+  - Azure Artifacts (create, host, share packages with your team. Can easily add artifacts to your CI/CD pipelines with a single click)
+- helps in releasing higher quality, well tested apps, on a shorter release cycle.
+- Having a streamlined development and deployment strategy can:
+  - Reduce delays in deliverying features and avoid cost overruns
+  - Allow teams to be more efficient with limited resources
+  - Generate detailed and accurate performance metrics
+- DevOps: is the union of people, process, and products to enable continous delivery of value to our end users. DevOps eliminates Development and Operation working in silos. It creates multidisciplinary teams taht work together with shared and efficient practices and tools. Some practices found in DevOps organizations include the following:
+  - Agile planning
+  - Continous Integration
+  - Continous Delivery
+  - Monitoring
+- 
