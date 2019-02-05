@@ -346,12 +346,33 @@
     - https://docs.microsoft.com/en-gb/learn/modules/execute-azure-function-with-triggers/7-blob-trigger
 - **Bindings**
   - A binding is a connection to data within your function.
+  - Makes it easier to integrate with data streams consistently in a function.
   - They are optional and come in form of input and output bindings.
   - An input binding is the data your function receives.
   - An output binding is the data your function sends
   - Unlike a trigger, a function can have multiple input and output bindings
+  - You can have multiple bindings providing access to different data elements. This is powerful because you can connect to your data sources without having to code specific connection logic (like database connections or web API interfaces).
+  - **Binding properties**
+    - Name
+      - Defines the function parameter through which you access the data.
+      - The name of the function parameter that receives the queue message content.
+    - Type
+      - type of data or service to interact with
+    - Direction
+      - input or output binding
+    - Connection
+      - Provides the name of an app setting key that contains the connection string.
+      - Bindings use connection strings stored in app settings to keep secrets out of the function code. 
+  - **Binding Expressions**
+    - Binding expressions can be done using curly braces i.e. {id} or {name}.png etc
+    - It enables you to bind to specific inputs
+    - https://docs.microsoft.com/en-gb/learn/modules/chain-azure-functions-data-using-bindings/5-read-data-with-input-bindings-portal-lab
+  - **Input and output bindings**
+    - https://docs.microsoft.com/en-gb/learn/modules/chain-azure-functions-data-using-bindings/4-read-data-with-input-bindings-portal-lesson
+    - https://docs.microsoft.com/en-gb/learn/modules/chain-azure-functions-data-using-bindings/6-write-data-with-output-bindings-portal-lesson
 - Support for Azure Function Triggers:
   - https://docs.microsoft.com/en-gb/learn/modules/create-serverless-logic-with-azure-functions/4-creating-and-executing-an-azure-function
+  - https://docs.microsoft.com/en-gb/learn/modules/chain-azure-functions-data-using-bindings/2-explore-input-and-output-binding-types-portal-lesson
 - **Drawbacks of serverless compute solution**
   - Execution time
     - by default, functions have a timeout of 5 minutes, the max is 10 mins. If requires more, then can host on VM. Durable functions also exist to allow you to orchestrate the executions of multiple functions without any timeout.
@@ -406,9 +427,13 @@
     - Page blobs
       - Made up of pages 
       - Designed for frequent random read and write operations
-- 
 - Reference
   - https://docs.microsoft.com/en-gb/learn/modules/execute-azure-function-with-triggers/7-blob-trigger
+
+## Azure Queue Storage
+- Azure Queue Storage is a service for storing messages that can be accessed anywhere
+- The size of a single message can be as much as 64KB
+- Queue can contain millions of messages (up to total cap of storage account)
 
 ## Azure Logic Apps (Serverless)
 -  Simplifies how you build automated scalable workflows that integrate apps and data across cloud services and on-premises systems.
