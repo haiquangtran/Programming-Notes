@@ -126,6 +126,8 @@
 - **Deployment slots**
   -  Add deployment slots to App Serivce web app. e.g. Staging deployment slot, production slot
   - You can easily swap the deployment slots so you can switch from staging to production etc.
+  - Deployment slots are actually live apps with their own hostnames. App content and configurations elements can be swapped between two deployment slots, including the production slot.
+  - https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots
 - **Continuous integration/deployment support**
   - Azure portal provides out-of-the-box CI and deployment with the following:
     - Azure DevOps
@@ -230,9 +232,8 @@
       - If builds need access to packages from Azure Artifacts, you need to explicitly grant permission.
     - https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops
 - **Pricing**
-  - Cloud-hosted pipelines for Linux, macOS, and Windows with 10 free parallel jobs and unlimited minutes for open source projects.
-
-
+  - Cloud-hosted pipelines for Linux, macOS, and Windows
+  - 10 free parallel jobs and unlimited minutes for open source projects.
 
 ## Azure Cosmos DB
 - Azure Cosmos DB is Microsoft's properiety globally-distributed, multi-model database service
