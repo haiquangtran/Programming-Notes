@@ -208,8 +208,11 @@
 
 ## Continuous Integration/Continuous Delivery (CI/CD)
 - https://docs.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-- **Azure pipelines**
+
+## **Azure pipelines**
   - Need a DevOps account and organisation (formly VSTS)
+  - Build, test, and deploy Node.js, Python,  Java, PHP, Ruby, Go, C/C++, C#, Android, and iOS apps
+  - Deploy to cloud providers like Azure, AWS, and GCP.
   - Integrates with the following:
     - Azure Repos Git
     - GitHub
@@ -226,6 +229,10 @@
     - Azure artifacts packages:
       - If builds need access to packages from Azure Artifacts, you need to explicitly grant permission.
     - https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops
+- **Pricing**
+  - Cloud-hosted pipelines for Linux, macOS, and Windows with 10 free parallel jobs and unlimited minutes for open source projects.
+
+
 
 ## Azure Cosmos DB
 - Azure Cosmos DB is Microsoft's properiety globally-distributed, multi-model database service
