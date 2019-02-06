@@ -231,6 +231,25 @@
     - Azure artifacts packages:
       - If builds need access to packages from Azure Artifacts, you need to explicitly grant permission.
     - https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops
+- **Tasks**
+  - A task is simply a packaged script or procedure
+  - Tasks run inside jobs
+  - When yoiu queue a build or deployment, all the tasks are run in sequence, one after the other, on an agent.
+  - You can build custom tasks. See this for example: https://docs.microsoft.com/en-us/azure/devops/pipelines/process/tasks?view=azure-devops&tabs=yaml
+- **Release Pipelines**
+  - Continously deliver software which is fully automated
+  - With release pipelines you can automate multiple stages all the way to production with approvals and on-demand deployments.
+  - https://docs.microsoft.com/en-us/azure/devops/pipelines/release/what-is-release-management?view=azure-devops
+- **Container jobs**
+  - Containers offer a lightweight abstraction over the host operating system.-
+  - You can select exact versions of operating systems, tools, and dependencies that your build requires.
+  - When you specify a container in your pipeline, the agent will first fetch and start the container.
+- **Jobs**
+  - Every build or deployment has atleast one job.
+  - A job is a series of tasks that run sequentially on the same target.
+  - https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml
+  - Parrallel jobs
+    - https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops
 - **Pricing**
   - Cloud-hosted pipelines for Linux, macOS, and Windows
   - 10 free parallel jobs and unlimited minutes for open source projects.

@@ -19,7 +19,7 @@
   - **Containers**
     - Containers are more portable and efficient.
     - Containers are an abstraction at the app layer that packages code and dependencies together
-    - Multiple containres can run ont he same machine adn share the OS kernel, each running isolated processes in user space.
+    - Multiple containers can run on the same machine and share the OS kernel, each running isolated processes in user space.
     - Containers take up less space than VMs (container images are typically tens of MBs in size)
     - Can handle more applications and require fewer VMs and Operating systems.
   - **Virtual Machines**
