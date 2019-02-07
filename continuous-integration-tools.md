@@ -19,6 +19,14 @@
 - CI build Server
 - Has free tier, where 20 build resources?
 - Easy setup and good user interface
+- **Free Tier (Professional Server License)**
+  - Define up to 100 build configurations (jobs) and run unlimited builds.
+  - 3 build agents concurrently.
+  - Free forever: Unlimited users, unlimited build time. No strings attached.
+- **Key Integrations**
+  - GitHub, BitBucket, VSTS
+  - JIRA 
+  - Azure etc.
 
 ## Bamboo
 - CI Build Server
