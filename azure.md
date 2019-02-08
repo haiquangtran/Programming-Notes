@@ -213,7 +213,7 @@
 
 ## **Azure pipelines**
   - See continous integration tools.md file for description
- 
+
 ## Azure Cosmos DB
 - Azure Cosmos DB is Microsoft's properiety globally-distributed, multi-model database service
 - Database as a Service
@@ -383,22 +383,33 @@
     - If you expect your function to be executed continuously by multiple clients, it would be prudent to estimate the usage and caculate the cost of using functions accordingly. It might be cheaper to host on a VM.
     - While scaling, only 1 function app instance can be created every 10 seconds, for up to 200 total instances. 
 - **Serverless APIs using Azure Functions**
-  - **Azure Functions Proxies**
+  - **Azure Functions Proxies (Azure Proxies)**
+    - You can use a proxy as a reverse proxy (front end app) where the frontend will request URL's from the proxy and the proxy will redirect those URLs to backend services. You can unify different APIs with this approach making it seem like they all come from the one API. 
+    - Can use this 
     - Allows you to forward requests to other resources.
-    - You define HTTP endpoint just like with HTTP trigger, but instead of writing code to execute when that endpoint is called, you provide a URL to a remote implementation
+    - You define HTTP endpoint just like with HTTP trigger, then you provide a URL to a remote implementation
     - Allows to compose multiple API sources into a single API surface
     - Useful for building your API as microservices
+    - You can use these proxies to break a large API into multiple function apps (as in a microservice architecture), while still presenting a single API surface for clients.
+    - Create a serverless-api: https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-serverless-api
+      - Creates a reverse proxy that is a frontend proxy which redirects calls to the backend function app
+      - You can use the reverse proxy to redirect calls to a Mock API implementation. This allows client development to progress, without needing the backend fully implemented. 
+        - Later in development, you could create a new function app which supports this logic and redirect your proxy to it.
+    - Proxy Request and Response overrides
+      - Request and response overrides can also be used in conjunction with a backend URL. This is particularly useful when proxying to a legacy system, where you might need to modify headers, query parameters, etc. 
     - A proxy can point to any HTTP resource, such as:
       - Azure Functions
       - API apps in Azure App Service
       - Docker containers in App Service in Linux
       - Any other hosted API
+    - https://docs.microsoft.com/en-gb/azure/azure-functions/functions-proxies
 - **Summary **
   - **Azure functions is code is being triggered by an event**
   - Can be developed and debugged on local workstation, which is a big plus to increase developer productivity
   - When dealing with synchronous request/response calls, that execute more complex logic, Azure function is the preferred option
 - **Supports**
   - Continous deployment and integration
+    - https://docs.microsoft.com/en-gb/azure/azure-functions/functions-continuous-deployment
   - Intuitive browser-based user interface allowing you to create scheduled or triggered pioeces of code implemented in a variety of programming languages.
 - Data processed by Azure Functions can persist into Azure data services such as Azure storage, Azure SQL DB, and Document DB.
 - References

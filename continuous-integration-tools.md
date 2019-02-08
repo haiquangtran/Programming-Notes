@@ -80,6 +80,8 @@
   - Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment.
   - Can use a gate to ensure release meets a wide range of criteria, without requiring user intervention.
   - https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops
+- **Supports Continous Integration with Azure Functions**
+  - https://docs.microsoft.com/en-gb/azure/azure-functions/functions-continuous-deployment
 - **Pricing**
   - Cloud-hosted pipelines for Linux, macOS, and Windows
   - 10 free parallel jobs and unlimited minutes for open source projects.
