@@ -488,4 +488,33 @@
   - Continous Integration
   - Continous Delivery
   - Monitoring
-- 
+
+## Azure Event Grid
+- you can use Azure Event Grid with your logic apps for event monitoring, routing, and publishing.
+- For serverless application architectures
+  - Connects data sources and event handles. e.g. use Event Grid to instantly trigger serverless function to run image analysis each time a new photo is added to a blob storage container.
+- https://azure.microsoft.com/en-au/services/event-grid/
+
+## Azure Logic Apps
+- Azure Logic Apps is a cloud service that helps automate tasks, business processes, and workflows when you need to integrate apps, data systems, and services across enterprises or organizations.
+- Simplifies how you design and build scalable solutions for integration, whether in the cloud or on premises.
+- Learn how to create, design, and deploy logic apps that automate business processes.
+- You can choose from over 200+ connectors, including Azure Service Bus, Functions, Storage, etc.
+- **How it works**
+  - Every Logic App starts with a trigger
+  - Each time trigger fires, the Logic Apps engine creates a logic app instance that runs the actions in the workflow
+  - Can include conditions statements, switch statements, loops, branching etc.
+  - Build in Azure portal, or Visual Studio using the Logic Apps Designer.
+    - For custom logic apps, can use JSON in the code view editor.
+    - Can also use Azure PowerShell commands and Azure Resource Manager templates for select tasks
+  - Logic apps deploy and run in the cloud on Azure
+- **Why use Logic Apps**
+  - Help connect legacy, modern and cutting-edge systems more quickly by providing prebuilt APIs.
+  - You can focus on apps business logic and functionality
+  - Don't worry about building, hosting, scaling, managing, maintaining, and monitoring your apps.
+  - Pay for only what you use based on consumption pricing model.
+  - Can write code in Azure functions and run that code on-demand from logic apps
+    - Services automatically scale to meet your needs, make integrations faster, and help build robust coud apps.
+  - if your logic apps need to interact with events from Azure services, custom apps, or other solutions, you can use Azure Event Grid with your logic apps for event monitoring, routing, and publishing.
+- References
+  - https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview
