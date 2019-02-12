@@ -152,10 +152,10 @@
 
 ## Azure Load Balancer
 - Load Balancer distributes new inbound flows that arrive on the Load Balancer's frontend to the backend pool instances, according to rules and health probes.
-- Create load-balancing rules to distribute traffice that arrives at frontend to bakend pool instances. 
+- Create load-balancing rules to distribute traffic that arrives at frontend to backend pool instances. 
 - A public Load Balancer can also provide outbound connections for VM's inside your virtual network by translating their private IP addresses to public IP addresses.
 - Can be public Load Balancer or Internal Load Balancer
-- Load Balancer  resource's functions expressed as a front end, a rule, a health probe, and a backend pool definition. You place VMs into the backend pool by specifying the backend pool from the VM.
+- Load Balancer resource's functions expressed as a front end, a rule, a health probe, and a backend pool definition. You place VMs into the backend pool by specifying the backend pool from the VM.
 - Benefits
   - Scale applications and create high availability for your services.
   - Supports inbound and outbound scenarios
@@ -449,14 +449,6 @@
 - The size of a single message can be as much as 64KB
 - Queue can contain millions of messages (up to total cap of storage account)
 
-## Azure Logic Apps (Serverless)
--  Simplifies how you build automated scalable workflows that integrate apps and data across cloud services and on-premises systems.
-- Create, design, and deploy logic apps that automate business processes
-### Summary
-- **Logic apps is a work flow triggered by an event**
-- Logic apps run only in the cloud, as it has dependency on Microsoft managed connectors. It cannnot be debug, test or run Logic apps locally
-- Logic apps better suited for asynchronous integration and fire-and-forget messaging that requires reliable processing.
-
 ## Azure Active Directory (AD)
 - Can use for storing user identities and doing authentication and authorization.
 - Azure AD is a modern identity provider that supports multiple authentication protocols to secure applications and services in the cloud.
@@ -495,13 +487,15 @@
   - Connects data sources and event handles. e.g. use Event Grid to instantly trigger serverless function to run image analysis each time a new photo is added to a blob storage container.
 - https://azure.microsoft.com/en-au/services/event-grid/
 
-## Azure Logic Apps
+## Azure Logic Apps (Serverless)
 - Azure Logic Apps is a cloud service that helps automate tasks, business processes, and workflows when you need to integrate apps, data systems, and services across enterprises or organizations.
 - Simplifies how you design and build scalable solutions for integration, whether in the cloud or on premises.
 - Learn how to create, design, and deploy logic apps that automate business processes.
 - You can choose from over 200+ connectors, including Azure Service Bus, Functions, Storage, etc.
+- Create a resource > Select Integration > Logic App.
 - **How it works**
   - Every Logic App starts with a trigger
+  - Enables you to create Work flows...
   - Each time trigger fires, the Logic Apps engine creates a logic app instance that runs the actions in the workflow
   - Can include conditions statements, switch statements, loops, branching etc.
   - Build in Azure portal, or Visual Studio using the Logic Apps Designer.
@@ -516,5 +510,43 @@
   - Can write code in Azure functions and run that code on-demand from logic apps
     - Services automatically scale to meet your needs, make integrations faster, and help build robust coud apps.
   - if your logic apps need to interact with events from Azure services, custom apps, or other solutions, you can use Azure Event Grid with your logic apps for event monitoring, routing, and publishing.
+- **Microsoft Flow vs Logic Apps**
+  - Microsoft Flow is built on top of logic apps
+  - Microsoft Flow is meant for end users to automate bits of their work while logic apps are meant for mission-critical work that is setup by developers.
+  - https://docs.microsoft.com/en-us/azure/azure-functions/functions-compare-logic-apps-ms-flow-webjobs
+- **Connectors**
+  - https://docs.microsoft.com/en-us/azure/connectors/apis-list
+- **Custom connectors**
+  - A custom connector is a wrapper around a REST API (Logic Apps also support SOAP APIs) that lets an underlying service talk to Logic Apps, Microsoft Flow, or PowerApps. 
+    - So first, you need a fully functioning API before you create a custom connector.
+  - https://docs.microsoft.com/en-gb/connectors/custom-connectors/
+- **Summary**
+  - **Logic apps is a work flow triggered by an event**
+    - Logic apps run only in the cloud, as it has dependency on Microsoft managed connectors. Cannot debug, test or run Logic apps locally
+  - Logic apps better suited for asynchronous integration and fire-and-forget messaging that requires reliable processing.
 - References
   - https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview
+  - https://docs.microsoft.com/en-gb/azure/logic-apps/logic-apps-create-api-app
+
+## Azure API Management service (APIM)
+- Azure API Management helps organisations publish APIs to developers
+- Provides the core competencies to ensure a successful API program through developer engagement, business insights, analytics, security, and protection.
+- APIM enables you to create and manage modern API gateways for existing backend services hosted anywhere.
+- **References**
+  - https://docs.microsoft.com/en-us/azure/api-management/import-and-publish
+
+## Azure Resource Manager (ARM)
+- The deployment and management service for Azure.
+- Provides consistent management layer that enables you to create, update, and delete resources in your Azure subscription.
+- When you take actions through the portal, PowerShell, Azure CLI etc, the Azure Resource Manager API handles your request because all requests are handled through the same API. 
+- **Benefits**
+  - Deploy, manage, and monitor all the resources of your solution as a group, rather than handling these resources individually.
+  - You can repeatedly deploy your solution throughout the development lifecycle and have confidence your resources are deployed in a consistent state.
+  - Manage your infrastructure through declarative templates rather than scripts
+  - Define dependencies between resources so they're deployed in the correct order
+  - Apply access control to all services in your resource group because Role-Based access control is natively intergrated
+  - Apply tags to resources to organize all resources 
+  - Clarify organisations billing by viewing costs for a group of resources sharing the same tag.
+- References
+  - https://docs.microsoft.com/en-gb/azure/azure-resource-manager/resource-group-overview
+  - https://docs.microsoft.com/en-gb/azure/azure-resource-manager/resource-group-template-deploy
