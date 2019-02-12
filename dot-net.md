@@ -75,6 +75,25 @@
   - https://social.msdn.microsoft.com/Forums/vstudio/en-US/7035edc6-97fc-49ee-8eee-2fa4d040a63b/what-are-differences-between-net-framwork-net-standard-and-net-core?forum=clr
   - https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/
 
+## ASP.NET 
+- open source serverside web application framework
+- Designed for web development to produce dynamic web pages, web apps, and web services.
+- ASP.NET's successor is ASP.NET Core which combines ASP.NET MVC, Web API, and ASP.NET Web Pages (uses Razor) into a unified MVC 6.
+- **Programming models**
+  - ASP.NET Web Forms - Framework for building modular pages out of components, with UI events being processed server-side.
+  - ASP.NET MVC - building web pages using MVC pattern.
+  - ASP.NET Web Pages - A lightweight syntax for adding dynamic code and data access directly inside HTML by using Razor
+  - ASP.NET Web API - Framework for building Web APIs on top of .NET Framework
+  - ASP.NET WebHooks - implements webhook pattern for subscribing to and publishing events via HTTP.
+  - SignalR - real-time communications framework for bi-directional communication between client and server.
+
+## ASP.NET Web Forms
+- Web application framework
+- Main building blocks of Web forms pages are server controls.
+- Server controls are reusable components responsible for rendering HTML markup and responding to events
+- A technique called **View state** is used to persist the state of server controls between normally stateless HTTP requests.
+- Web Forms is **not supported by .NET Core**
+
 ## C# 8
 - Features:
    - Using declarations have changed
