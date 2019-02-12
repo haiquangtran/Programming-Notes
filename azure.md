@@ -292,6 +292,7 @@
 - can implement code that is triggered by events occuring in Azure or third party service as well as on-premises systems.
 - Allows developers to take action by connecting to data sources or messaging solutions thus making it easy to process and react to events.
 - Basically like a Web API endpoint but it costs money everytime you use it.
+- **Note**: If you dev in VS and then deploy it, the function gets compiled and you can't edit it directly in the portal
 - **Defintions**
   - What is a Function app?
     - functions are hosted in an execution context called a function app.
@@ -492,6 +493,7 @@
 - Simplifies how you design and build scalable solutions for integration, whether in the cloud or on premises.
 - Learn how to create, design, and deploy logic apps that automate business processes.
 - You can choose from over 200+ connectors, including Azure Service Bus, Functions, Storage, etc.
+- Logic apps run only in the cloud, as it has dependency on Microsoft managed connectors. Cannot debug, test or run Logic apps locally
 - Create a resource > Select Integration > Logic App.
 - **How it works**
   - Every Logic App starts with a trigger
